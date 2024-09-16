@@ -69,6 +69,8 @@ public class MoveForward : MonoBehaviour
         Player.transform.position = smoothPosition;
         Player.transform.Translate(Vector3.forward * Time.deltaTime * speed);
         Attractor.transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
+
     }
 
     public void moveLeft()
@@ -93,11 +95,7 @@ public class MoveForward : MonoBehaviour
     {
         if (Physics.Raycast(Player.transform.position, Vector3.down, out RaycastHit hit))
         {
-            Vector3 newPosition = new Vector3(
-                Player.transform.position.x,
-                hit.point.y,
-                Player.transform.position.z
-            );
+            Vector3 newPosition = new Vector3(Player.transform.position.x, hit.point.y, Player.transform.position.z);
             Player.transform.position = Vector3.Lerp(Player.transform.position, newPosition, groundMoveSpeed * Time.deltaTime);
         }
     }
