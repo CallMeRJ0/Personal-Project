@@ -1,2 +1,2 @@
 # Personal-Project
- Person Game
+Just my attempt at a game.
